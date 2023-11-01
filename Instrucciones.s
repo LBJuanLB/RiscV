@@ -5,4 +5,3 @@ addi x5, x0, 7
 loop:
 add x3, x3, x1
 addi x1, x1, 1
-bne x1, x2, loop
