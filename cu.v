@@ -189,9 +189,11 @@ always @(*) begin
         //Tipo U - lui
         7'b0110111: begin
             store = 1'b0;
+            
             BrOp = 5'b00000;
-            we = 1'b0;
-            funct_imm = 3'b011;
+            we = 1'b1;
+            salida_funct3 = 3'b100;
+            controlALU = 1'b1;
         end
         //Tipo U - auipc
         7'b0010111: begin
