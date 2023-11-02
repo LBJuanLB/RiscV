@@ -1,11 +1,17 @@
 module mux(
   input wire control,    
-  input wire [31: 0] entrada1, // Puede ser el data1
-  input wire [31: 0] entrada2, // Puede ser el data2           
-  output wire [31:0] salida 
+  input wire [31:0] entrada1, // Puede ser el data1
+  input wire [31:0] entrada2, // Puede ser el data2           
+  output reg [31:0] salida 
 );
 
-  assign salida = (control == 1'b0) ? entrada1 :
-             (control == 1'b1) ? entrada2 : 32'b0; // Salida alta impedancia en caso de que sel sea 2'b11
+  always @* begin
+    if (control == 1'b0)
+      salida = entrada1;
+    else if (control == 1'b1)
+      salida = entrada2;
+    else
+      salida = 32'b00000000000000000000000000000000; // Otros casos
+  end
 
 endmodule

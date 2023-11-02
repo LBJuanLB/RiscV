@@ -192,10 +192,11 @@ always @(*) begin
             funct_imm = 3'b011; 
             BrOp = 5'b00000;
             we = 1'b1;
-            salida_funct3 = 3'b100;
+            salida_funct3 = 3'b000;
             controlALU = 1'b1;
             Type_alu = 1'b0;
             controlRF = 2'b01;
+            controlOp1 = 1'bx;
         end
         //Tipo U - auipc
         7'b0010111: begin
