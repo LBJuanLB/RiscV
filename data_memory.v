@@ -11,7 +11,7 @@ module data_memory#(
 );
     reg memory [(TAM*32):0]; 
     wire [31:0] address;
-    assign address = (direccion+offset)*32;
+    assign address = (direccion+offset)*8;
     reg [31:0] data;
     reg [31:0] count;
     

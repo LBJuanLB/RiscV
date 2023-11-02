@@ -429,7 +429,7 @@ class RecursiveDescentParser(object):
         bin_complemento_1 = bin_complemento_1[-bits:]
         bin_complemento_2 = bin(int(bin_complemento_1, 2) + 1)[2:].zfill(bits)
         imm=bin_complemento_2
-      inst=imm[1]+imm[3:9]+rs2+rs1+funct3+imm[8:12]+imm[2]+opcode
+      inst=imm[0]+imm[2:8]+rs2+rs1+funct3+imm[8:12]+imm[1]+opcode
       return inst
 
     def InstJ(self):

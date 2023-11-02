@@ -13,7 +13,7 @@ module IMM (
                 assign imm32= {{20{immediate[24]}},immediate[24:18],immediate[4:0]};
             //Tipo B
             3'b010:
-                assign imm32= {{20{immediate[24]}},immediate[24],immediate[0],immediate[23:18],immediate[4:1]};
+                assign imm32= {{19{immediate[24]}},immediate[24],immediate[0],immediate[23:18],immediate[4:1],1'b0};
             //TIpo U
             3'b011:
                 assign imm32 = {{12{1'b0}}, immediate[24:5]} << 12;
