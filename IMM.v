@@ -16,11 +16,13 @@ module IMM (
                 assign imm32= {{20{immediate[24]}},immediate[24],immediate[0],immediate[23:18],immediate[4:1]};
             //TIpo U
             3'b011:
-                assign imm32 = {{12{immediate[24]}}, immediate[24:5]} << 12;
+                assign imm32 = {{12{1'b0}}, immediate[24:5]} << 12;
             //Tipo J
             3'b100:
                 assign imm32 = {{12{immediate[24]}}, immediate[24],immediate[12:5],immediate[13],immediate[23:14]};
         endcase
+
+                   
     end
     
 endmodule

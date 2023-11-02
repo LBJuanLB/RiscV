@@ -26,9 +26,13 @@ reg [31:0] conteo;
                 else
                     result = operand1 + operand2; //ADD
             3'b100:
-                result = operand1 ^ operand2;    //XOR
+                if (Type_alu)
+                    result = operand1 ^ operand2;    //XOR
+                else
+                    result = operand2 + 32'b0; //LUI   
             3'b110:
-                result = operand1 | operand2;    //OR
+                if(Type_alu)
+                    result = operand1 | operand2;    //OR
             3'b111:
                 result = operand1 & operand2;    //AND
             3'b010:

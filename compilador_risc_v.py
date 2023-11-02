@@ -500,9 +500,9 @@ class RecursiveDescentParser(object):
       self._accept('IMM')
 
       valor_imm=int(self.tok.value)
-      if valor_imm > 6442450943 or valor_imm < 0:
-          raise SystemError('El inmediato ingresado no puede ser mayor a 32 bits (6442450943) o negativo')
-      bits=32
+      if valor_imm > 9979356512255 or valor_imm < -8899172237312:
+          raise SystemError('El inmediato ingresado no puede ser mayor a 20 bits (9979356512255) o negativo')
+      bits=20
       imm=bin(valor_imm)[2:].zfill(bits)
 
       inst=imm[0:20]+rd+opcode

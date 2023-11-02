@@ -5,6 +5,7 @@ module mux(
   output wire [31:0] salida 
 );
 
-  assign salida = (control == 1'b0) ? entrada1: entrada2;
+  assign salida = (control == 1'b0) ? entrada1 :
+             (control == 1'b1) ? entrada2 : 32'b0; // Salida alta impedancia en caso de que sel sea 2'b11
 
 endmodule
