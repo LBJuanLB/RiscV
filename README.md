@@ -21,6 +21,7 @@ Recordar ejecutar "compilador_risc_v.py" luego de modificar el archivo "Instrucc
 Para ejecutar la CPU nosotros utilizamos las siguientes instrucciones:
 
 iverilog -o CPU_tb.vvp CPU_tb.v
+
 vvp CPU_tb.vvp
 
 y en la consola se muestra la informacion de los registros.
