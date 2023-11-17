@@ -53,19 +53,20 @@ class CodeGenerator(object):
 
     def program(self, tree):
         #print("Program*- {}".format(tree))
+        '''
         if self.useSpim:
             self.dataHeader()
-
+        '''
         for funcdef in tree.tail[:-1]:
             self.visit(funcdef)
         main = tree.tail[-1]
 
         self.ce.newLabel("main")
         self.visit(main)
-
+        '''
         if self.useSpim:
             self.exit()
-
+        '''
     def functiondef(self, tree):
         functionName = tree.tail[1]
         self.ce.newLabel(functionName)

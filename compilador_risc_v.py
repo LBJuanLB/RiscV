@@ -412,7 +412,6 @@ class RecursiveDescentParser(object):
           raise SystemError('Ingreso un label que no está')
         label_linea=self.etiquetas[self.tok.value]
         valor_imm=label_linea-self.current_line
-        print(valor_imm)
       else:
         raise SystemError('Se esperaba un inmediato o un label')
 
@@ -421,7 +420,6 @@ class RecursiveDescentParser(object):
       bits=13
       if valor_imm >= 0:
         imm=bin(valor_imm)[2:].zfill(bits)
-        print(imm)
       else:
         numero_positivo = -valor_imm
         bin_positivo = bin(numero_positivo)[2:].zfill(bits)
@@ -591,3 +589,4 @@ if __name__ == '__main__':
 	ast = ast+"00000000000000000000000000000000"
 	with open("Binario_Inst.txt", "w") as archivo:
 		archivo.write(ast)
+	print("Instrucciones en binario generadas con exito.")

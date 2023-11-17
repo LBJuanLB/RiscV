@@ -28,13 +28,13 @@ class MIPSCodeEmitter(object):
         if offset is None:
             offset = 0
         regs = self.registers
-        self.println("sw {}, {}({})".format(regs[t], offset, regs[s]))
+        self.println("sw {}, {}, {}".format(regs[t], offset, regs[s]))
 
     def lw(self, t, s, offset = None):
         if offset is None:
             offset = 0
         regs = self.registers
-        self.println("lw {}, {}({})".format(regs[t], offset, regs[s]))
+        self.println("lw {}, {}, {}".format(regs[t], offset, regs[s]))
 
     def li(self, t, imm):
         regs = self.registers
