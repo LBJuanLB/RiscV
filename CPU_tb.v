@@ -19,7 +19,7 @@ module CPU_TB;
 
     initial begin
     $dumpfile("CPU_TB.vcd"); $dumpvars(0, CPU_TB);
-    clk=1;
+    clk=1; // Inicializa el reloj en 1 para que el primer flanco sea de bajada
     rst = 1;
     #10;
     rst = 0;
